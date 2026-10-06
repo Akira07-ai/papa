@@ -1,100 +1,764 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
-<title>For Papa — Happy Birthday</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>For Papa ❤️</title>
+
 <style>
-*{box-sizing:border-box} html,body{margin:0;min-height:100%;background:#02040d;color:#fff;font-family:Georgia,serif}
-body{overflow-x:hidden}
-.sky{position:relative;min-height:100vh;min-height:100svh;overflow:hidden;
- background:
- radial-gradient(circle at 50% 42%,rgba(52,71,135,.22),transparent 38%),
- radial-gradient(circle at 20% 15%,rgba(75,92,160,.14),transparent 28%),
- linear-gradient(180deg,#030513 0%,#070b22 55%,#01030b 100%)}
-.sky:before,.sky:after{content:"";position:absolute;inset:0;pointer-events:none;background-image:
- radial-gradient(circle,rgba(255,255,255,.82) 0 1px,transparent 1.5px),
- radial-gradient(circle,rgba(255,255,255,.55) 0 1px,transparent 1.5px);
- background-size:83px 97px,137px 151px;background-position:13px 8px,44px 31px;opacity:.55}
-.sky:after{background-size:211px 189px,173px 223px;opacity:.24}
-.title{position:absolute;z-index:3;top:8%;width:100%;text-align:center;padding:0 24px}
-.kicker{font:600 11px/1.2 system-ui,sans-serif;letter-spacing:.32em;text-transform:uppercase;color:#bfc8e8}
-h1{font-size:clamp(34px,9vw,64px);font-weight:400;margin:10px 0 4px;letter-spacing:.02em}
-.sub{font:14px/1.6 system-ui,sans-serif;color:#aeb7d7}
-.star{position:absolute;z-index:4;width:54px;height:54px;border:0;background:transparent;color:#fff;transform:translate(-50%,-50%);cursor:pointer;padding:10px;border-radius:50%}
-.star-core{display:block;font-size:28px;line-height:34px;text-shadow:0 0 6px #fff,0 0 18px #b9c9ff,0 0 34px #8ca8ff;animation:pulse 2.8s ease-in-out infinite}
-.star:nth-of-type(2) .star-core{animation-delay:.4s} .star:nth-of-type(3) .star-core{animation-delay:.8s}
-.star:nth-of-type(4) .star-core{animation-delay:1.2s} .star:nth-of-type(5) .star-core{animation-delay:1.6s} .star:nth-of-type(6) .star-core{animation-delay:2s}
-@keyframes pulse{0%,100%{transform:scale(.88);opacity:.75}50%{transform:scale(1.16);opacity:1}}
-.footer{position:absolute;z-index:3;bottom:7%;width:100%;text-align:center;padding:0 24px}
-.footer strong{display:block;font-size:18px;font-weight:400;letter-spacing:.08em}
-.footer span{display:block;margin-top:7px;font:12px system-ui,sans-serif;color:#9fa8c9}
-.modal{position:fixed;inset:0;z-index:20;display:none;align-items:center;justify-content:center;padding:20px;background:rgba(0,0,0,.72);backdrop-filter:blur(9px)}
-.modal.open{display:flex}
-.memory{display:none;width:min(92vw,430px);max-height:90vh;overflow:auto;border:1px solid rgba(255,255,255,.14);border-radius:24px;background:linear-gradient(160deg,rgba(20,26,53,.96),rgba(5,8,20,.97));box-shadow:0 25px 80px rgba(0,0,0,.55);padding:14px}
-.memory.active{display:block;animation:rise .35s ease}
-@keyframes rise{from{opacity:0;transform:translateY(18px) scale(.97)}to{opacity:1;transform:none}}
-.photo{border-radius:16px;overflow:hidden;background:#11172b;aspect-ratio:3/4;display:flex;align-items:center;justify-content:center}
-.photo img{width:100%;height:100%;object-fit:cover;display:block}
-.photo-placeholder{font:13px system-ui,sans-serif;color:#7f88a7}
-.message{font-size:20px;line-height:1.55;margin:20px 10px 8px;text-align:center;white-space:pre-line}
-.hint{text-align:center;color:#7f88a7;font:11px system-ui,sans-serif;letter-spacing:.12em;text-transform:uppercase;padding-bottom:8px}
-.close{position:absolute;right:18px;top:16px;width:44px;height:44px;border-radius:50%;border:1px solid rgba(255,255,255,.2);background:rgba(10,13,28,.85);color:#fff;font-size:24px;cursor:pointer}
-.note{position:absolute;z-index:5;left:50%;top:53%;transform:translate(-50%,-50%);font:12px system-ui,sans-serif;color:rgba(210,218,245,.45);letter-spacing:.12em;text-transform:uppercase;pointer-events:none}
-@media (max-width:500px){.title{top:6%} .footer{bottom:5%} .note{top:51%}}
+* {
+    box-sizing: border-box;
+}
+
+html, body {
+    margin: 0;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    background: #02040d;
+}
+
+body {
+    font-family: Georgia, "Times New Roman", serif;
+    color: white;
+}
+
+/* =========================
+   NIGHT SKY
+========================= */
+
+.sky {
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    height: 100svh;
+    overflow: hidden;
+
+    background:
+        radial-gradient(
+            ellipse at 50% 45%,
+            rgba(55, 73, 145, 0.25),
+            transparent 42%
+        ),
+        radial-gradient(
+            ellipse at 15% 15%,
+            rgba(80, 90, 170, 0.13),
+            transparent 30%
+        ),
+        linear-gradient(
+            180deg,
+            #02030c 0%,
+            #070b20 55%,
+            #010207 100%
+        );
+}
+
+/* Background stars */
+
+.sky::before,
+.sky::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+
+    background-image:
+        radial-gradient(
+            circle,
+            rgba(255,255,255,0.85) 0 1px,
+            transparent 1.5px
+        ),
+        radial-gradient(
+            circle,
+            rgba(255,255,255,0.55) 0 1px,
+            transparent 1.5px
+        );
+
+    background-size:
+        83px 97px,
+        137px 151px;
+
+    background-position:
+        13px 8px,
+        44px 31px;
+
+    opacity: 0.48;
+}
+
+.sky::after {
+    background-size:
+        211px 189px,
+        173px 223px;
+
+    opacity: 0.20;
+}
+
+/* =========================
+   TITLE
+========================= */
+
+.title {
+    position: absolute;
+    z-index: 3;
+
+    top: 8%;
+    left: 0;
+
+    width: 100%;
+
+    text-align: center;
+    padding: 0 20px;
+}
+
+.kicker {
+    font-family: Arial, sans-serif;
+    font-size: 10px;
+    font-weight: 600;
+
+    letter-spacing: 0.35em;
+    text-transform: uppercase;
+
+    color: #b9c2df;
+}
+
+h1 {
+    margin: 12px 0 5px;
+
+    font-size: clamp(36px, 9vw, 66px);
+    font-weight: 400;
+
+    letter-spacing: 0.02em;
+}
+
+.subtitle {
+    font-family: Arial, sans-serif;
+
+    font-size: 13px;
+    line-height: 1.6;
+
+    color: #9da7c8;
+}
+
+/* =========================
+   INSTRUCTION
+========================= */
+
+.instruction {
+    position: absolute;
+
+    z-index: 3;
+
+    top: 49%;
+    left: 50%;
+
+    transform: translate(-50%, -50%);
+
+    color: rgba(215,222,247,0.42);
+
+    font-family: Arial, sans-serif;
+    font-size: 10px;
+
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+
+    white-space: nowrap;
+
+    pointer-events: none;
+}
+
+/* =========================
+   SPECIAL STARS
+========================= */
+
+.star {
+    position: absolute;
+
+    z-index: 5;
+
+    width: 60px;
+    height: 60px;
+
+    border: none;
+    background: transparent;
+
+    color: white;
+
+    transform: translate(-50%, -50%);
+
+    cursor: pointer;
+
+    padding: 10px;
+
+    border-radius: 50%;
+}
+
+.star-core {
+    display: block;
+
+    font-size: 30px;
+    line-height: 38px;
+
+    text-shadow:
+        0 0 6px white,
+        0 0 16px #b8c8ff,
+        0 0 34px #829fff;
+
+    animation: starPulse 2.8s ease-in-out infinite;
+}
+
+.star:nth-of-type(2) .star-core {
+    animation-delay: 0.5s;
+}
+
+.star:nth-of-type(3) .star-core {
+    animation-delay: 1s;
+}
+
+.star:nth-of-type(4) .star-core {
+    animation-delay: 1.5s;
+}
+
+@keyframes starPulse {
+
+    0%, 100% {
+        transform: scale(0.84);
+        opacity: 0.72;
+    }
+
+    50% {
+        transform: scale(1.18);
+        opacity: 1;
+    }
+}
+
+/* =========================
+   FOOTER
+========================= */
+
+.footer {
+    position: absolute;
+
+    z-index: 3;
+
+    bottom: 6%;
+    left: 0;
+
+    width: 100%;
+
+    text-align: center;
+
+    padding: 0 20px;
+}
+
+.footer strong {
+    display: block;
+
+    font-size: 18px;
+    font-weight: 400;
+
+    letter-spacing: 0.08em;
+}
+
+.footer span {
+    display: block;
+
+    margin-top: 7px;
+
+    font-family: Arial, sans-serif;
+    font-size: 11px;
+
+    color: #8f99ba;
+}
+
+/* =========================
+   POPUP BACKGROUND
+========================= */
+
+.modal {
+    position: fixed;
+
+    inset: 0;
+
+    z-index: 20;
+
+    display: none;
+
+    align-items: center;
+    justify-content: center;
+
+    padding: 18px;
+
+    background: rgba(0,0,0,0.76);
+
+    backdrop-filter: blur(10px);
+}
+
+.modal.open {
+    display: flex;
+}
+
+/* =========================
+   PHOTO CARD
+========================= */
+
+.memory {
+    display: none;
+
+    width: min(91vw, 420px);
+    max-height: 90vh;
+
+    overflow-y: auto;
+
+    padding: 12px;
+
+    border-radius: 25px;
+
+    border: 1px solid rgba(255,255,255,0.15);
+
+    background:
+        linear-gradient(
+            160deg,
+            rgba(19,25,52,0.98),
+            rgba(4,7,18,0.98)
+        );
+
+    box-shadow:
+        0 25px 90px rgba(0,0,0,0.6);
+}
+
+.memory.active {
+    display: block;
+
+    animation: popup 0.32s ease;
+}
+
+@keyframes popup {
+
+    from {
+        opacity: 0;
+        transform: translateY(16px) scale(0.97);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+    }
+}
+
+/* =========================
+   IMAGE
+========================= */
+
+.photo {
+    width: 100%;
+
+    aspect-ratio: 3 / 4;
+
+    overflow: hidden;
+
+    border-radius: 17px;
+
+    background: #0c1023;
+}
+
+.photo img {
+    width: 100%;
+    height: 100%;
+
+    object-fit: cover;
+
+    display: block;
+}
+
+/* =========================
+   MESSAGE
+========================= */
+
+.message {
+    margin: 20px 12px 10px;
+
+    font-size: 19px;
+
+    line-height: 1.55;
+
+    text-align: center;
+
+    color: #f7f8ff;
+
+    white-space: pre-line;
+}
+
+.hint {
+    padding-bottom: 7px;
+
+    text-align: center;
+
+    font-family: Arial, sans-serif;
+
+    font-size: 10px;
+
+    letter-spacing: 0.16em;
+
+    text-transform: uppercase;
+
+    color: #77819f;
+}
+
+/* =========================
+   CLOSE BUTTON
+========================= */
+
+.close {
+    position: absolute;
+
+    right: 17px;
+    top: 15px;
+
+    z-index: 30;
+
+    width: 44px;
+    height: 44px;
+
+    border-radius: 50%;
+
+    border: 1px solid rgba(255,255,255,0.22);
+
+    background: rgba(7,10,24,0.9);
+
+    color: white;
+
+    font-size: 25px;
+
+    cursor: pointer;
+}
+
+/* =========================
+   MOBILE
+========================= */
+
+@media (max-width: 500px) {
+
+    .title {
+        top: 6%;
+    }
+
+    .instruction {
+        top: 50%;
+    }
+
+    .footer {
+        bottom: 5%;
+    }
+
+}
+
 </style>
 </head>
+
+
 <body>
-<main class="sky">
-  <div class="title">
-    <div class="kicker">A little piece of the night sky</div>
-    <h1>Happy Birthday, Papa</h1>
-    <div class="sub">Some stars are worth stopping for.</div>
-  </div>
-  <div class="note">Tap a bright star</div>
-  <button class="star" data-index="0" style="left:18%;top:24%;" aria-label="Open memory 1"><span class="star-core">✦</span></button><button class="star" data-index="1" style="left:72%;top:19%;" aria-label="Open memory 2"><span class="star-core">✦</span></button><button class="star" data-index="2" style="left:48%;top:35%;" aria-label="Open memory 3"><span class="star-core">✦</span></button><button class="star" data-index="3" style="left:82%;top:55%;" aria-label="Open memory 4"><span class="star-core">✦</span></button><button class="star" data-index="4" style="left:28%;top:64%;" aria-label="Open memory 5"><span class="star-core">✦</span></button><button class="star" data-index="5" style="left:60%;top:76%;" aria-label="Open memory 6"><span class="star-core">✦</span></button>
-  <div class="footer"><strong>For everything you've done.</strong><span>— from your son ❤️</span></div>
-</main>
-<div class="modal" id="modal" aria-modal="true" role="dialog">
-  <button class="close" id="close" aria-label="Close">×</button>
-  <div class="memory" data-memory="0">
-          <div class="photo"><img src="img1">
-   <div class="message">Thank you papa for always be on my side. </div>
-          <div class="hint">Star 1 • A little memory from m</div>
-        </div><div class="memory" data-memory="1">
-          <div class="photo"><img src="img2">
-          <div class="message">Thank you for always being the amazing Father you are, Kabhi kabhi gussa karte ho but chalta hai.</div>
-          <div class="hint">Star 2 • A little memory from me</div>
-        </div><div class="memory" data-memory="2">
-          <div class="photo"><img src="img3">
-         <div class="message">I promise to make you proud and i wish you to be happy all the time.</div>
-          <div class="hint">Star 3 • A little memory from me</div>
-        </div><div class="memory" data-memory="3">
-          <div class="photo"><img src="img4">
-          <div class="message">I Love You Papa.</div>
-          <div class="hint">Star 4 • A little memory from me</div>
-        </div><div class="memory" data-memory="4">
-          <div class="photo"><div class="photo-placeholder">Add photo</div></div>
-          <div class="message">YOUR 2–3 LINE MESSAGE HERE</div>
-          <div class="hint">Star 5 • A little memory from me</div>
-        </div><div class="memory" data-memory="5">
-          <div class="photo"><div class="photo-placeholder">Add photo</div></div>
-          <div class="message">YOUR 2–3 LINE MESSAGE HERE</div>
-          <div class="hint">Star 6 • A little memory from me</div>
+
+<div class="sky">
+
+    <!-- TITLE -->
+
+    <div class="title">
+
+        <div class="kicker">
+            A little piece of the night sky
         </div>
+
+        <h1>
+            Happy Birthday, Papa
+        </h1>
+
+        <div class="subtitle">
+            Some stars are worth stopping for.
+        </div>
+
+    </div>
+
+
+    <!-- INSTRUCTION -->
+
+    <div class="instruction">
+        Tap a bright star
+    </div>
+
+
+    <!-- STAR 1 -->
+
+    <button
+        class="star"
+        data-index="0"
+        style="left:18%; top:25%;"
+        aria-label="Open memory one"
+    >
+        <span class="star-core">✦</span>
+    </button>
+
+
+    <!-- STAR 2 -->
+
+    <button
+        class="star"
+        data-index="1"
+        style="left:78%; top:22%;"
+        aria-label="Open memory two"
+    >
+        <span class="star-core">✦</span>
+    </button>
+
+
+    <!-- STAR 3 -->
+
+    <button
+        class="star"
+        data-index="2"
+        style="left:43%; top:58%;"
+        aria-label="Open memory three"
+    >
+        <span class="star-core">✦</span>
+    </button>
+
+
+    <!-- STAR 4 -->
+
+    <button
+        class="star"
+        data-index="3"
+        style="left:74%; top:70%;"
+        aria-label="Open memory four"
+    >
+        <span class="star-core">✦</span>
+    </button>
+
+
+    <!-- FOOTER -->
+
+    <div class="footer">
+
+        <strong>
+            For everything you've done.
+        </strong>
+
+        <span>
+            — from your son ❤️
+        </span>
+
+    </div>
+
 </div>
+
+
+<!-- =========================
+     POPUPS
+========================= -->
+
+<div
+    class="modal"
+    id="modal"
+    role="dialog"
+    aria-modal="true"
+>
+
+
+    <!-- CLOSE -->
+
+    <button
+        class="close"
+        id="close"
+        aria-label="Close"
+    >
+        ×
+    </button>
+
+
+    <!-- MEMORY 1 -->
+
+    <div class="memory">
+
+        <div class="photo">
+
+            <img
+                src="img1.jpeg"
+                alt="Papa — memory one"
+            >
+
+        </div>
+
+        <div class="message">
+Thank you papa for always be on my side. 
+        </div>
+
+        <div class="hint">
+            A memory from me
+        </div>
+
+    </div>
+
+
+    <!-- MEMORY 2 -->
+
+    <div class="memory">
+
+        <div class="photo">
+
+            <img
+                src="img2.jpeg"
+                alt="Papa — memory two"
+            >
+
+        </div>
+
+        <div class="message">
+Thank you for always being the amazing Father you are, Kabhi kabhi gussa karte ho but chalta hai.
+        </div>
+
+        <div class="hint">
+            A memory from me
+        </div>
+
+    </div>
+
+
+    <!-- MEMORY 3 -->
+
+    <div class="memory">
+
+        <div class="photo">
+
+            <img
+                src="img3.jpeg"
+                alt="Papa — memory three"
+            >
+
+        </div>
+
+        <div class="message">
+I promise to make you proud and i wish you to be happy all the time.
+        </div>
+
+        <div class="hint">
+            A memory from me
+        </div>
+
+    </div>
+
+
+    <!-- MEMORY 4 -->
+
+    <div class="memory">
+
+        <div class="photo">
+
+            <img
+                src="img4.jpeg"
+                alt="Papa — memory four"
+            >
+
+        </div>
+
+        <div class="message">
+I Love You Papa.
+        </div>
+
+        <div class="hint">
+            A memory from me
+        </div>
+
+    </div>
+
+</div>
+
+
 <script>
-const modal=document.getElementById('modal');
-const memories=[...document.querySelectorAll('.memory')];
-document.querySelectorAll('.star').forEach(s=>s.addEventListener('click',()=>{
-  memories.forEach(m=>m.classList.remove('active'));
-  memories[+s.dataset.index].classList.add('active');
-  modal.classList.add('open');
-}));
-function closeModal(){modal.classList.remove('open');memories.forEach(m=>m.classList.remove('active'));}
-document.getElementById('close').addEventListener('click',closeModal);
-modal.addEventListener('click',e=>{if(e.target===modal)closeModal();});
-document.addEventListener('keydown',e=>{if(e.key==='Escape')closeModal();});
+
+const modal = document.getElementById("modal");
+
+const memories = [
+    ...document.querySelectorAll(".memory")
+];
+
+
+// OPEN STAR
+
+document
+.querySelectorAll(".star")
+.forEach(star => {
+
+    star.addEventListener("click", () => {
+
+        memories.forEach(memory => {
+            memory.classList.remove("active");
+        });
+
+        const selected =
+            memories[
+                Number(star.dataset.index)
+            ];
+
+        selected.classList.add("active");
+
+        modal.classList.add("open");
+
+    });
+
+});
+
+
+// CLOSE POPUP
+
+function closeModal() {
+
+    modal.classList.remove("open");
+
+    memories.forEach(memory => {
+        memory.classList.remove("active");
+    });
+
+}
+
+
+// CLOSE BUTTON
+
+document
+.getElementById("close")
+.addEventListener(
+    "click",
+    closeModal
+);
+
+
+// CLICK OUTSIDE CARD
+
+modal.addEventListener(
+    "click",
+    event => {
+
+        if (event.target === modal) {
+            closeModal();
+        }
+
+    }
+);
+
+
+// ESCAPE KEY
+
+document.addEventListener(
+    "keydown",
+    event => {
+
+        if (event.key === "Escape") {
+            closeModal();
+        }
+
+    }
+);
+
 </script>
+
 </body>
 </html>
